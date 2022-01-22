@@ -55,9 +55,39 @@
               />
             </svg>
           </a>
-          <a title="Open Sigma repository on New Tab" href="https://github.com/SigmaHQ/sigma/tree/master/rules" target="_blank"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M7.97553 0C3.57186 0 0 3.57186 0 7.97553C0 11.4985 2.29969 14.4832 5.43119 15.5596C5.82263 15.6086 5.96942 15.3639 5.96942 15.1682C5.96942 14.9725 5.96942 14.4832 5.96942 13.7982C3.76758 14.2875 3.27829 12.7217 3.27829 12.7217C2.93578 11.792 2.39755 11.5474 2.39755 11.5474C1.66361 11.0581 2.44648 11.0581 2.44648 11.0581C3.22936 11.107 3.66972 11.8899 3.66972 11.8899C4.40367 13.1131 5.52905 12.7706 5.96942 12.5749C6.01835 12.0367 6.263 11.6942 6.45872 11.4985C4.69725 11.3028 2.83792 10.6177 2.83792 7.53517C2.83792 6.65443 3.1315 5.96942 3.66972 5.38226C3.62079 5.23547 3.32722 4.40367 3.76758 3.32722C3.76758 3.32722 4.4526 3.1315 5.96942 4.15902C6.6055 3.9633 7.29052 3.91437 7.97553 3.91437C8.66055 3.91437 9.34557 4.01223 9.98165 4.15902C11.4985 3.1315 12.1835 3.32722 12.1835 3.32722C12.6239 4.40367 12.3303 5.23547 12.2813 5.43119C12.7706 5.96942 13.1131 6.70336 13.1131 7.5841C13.1131 10.6667 11.2538 11.3028 9.49235 11.4985C9.78593 11.7431 10.0306 12.2324 10.0306 12.9664C10.0306 14.0428 10.0306 14.8746 10.0306 15.1682C10.0306 15.3639 10.1774 15.6086 10.5688 15.5596C13.7492 14.4832 16 11.4985 16 7.97553C15.9511 3.57186 12.3792 0 7.97553 0Z" fill="#C5C5C5"/>
-</svg></a>
+          <a
+            title="Open Sigma repository on New Tab"
+            href="https://github.com/SigmaHQ/sigma/tree/master/rules"
+            target="_blank"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M7.97553 0C3.57186 0 0 3.57186 0 7.97553C0 11.4985 2.29969 14.4832 5.43119 15.5596C5.82263 15.6086 5.96942 15.3639 5.96942 15.1682C5.96942 14.9725 5.96942 14.4832 5.96942 13.7982C3.76758 14.2875 3.27829 12.7217 3.27829 12.7217C2.93578 11.792 2.39755 11.5474 2.39755 11.5474C1.66361 11.0581 2.44648 11.0581 2.44648 11.0581C3.22936 11.107 3.66972 11.8899 3.66972 11.8899C4.40367 13.1131 5.52905 12.7706 5.96942 12.5749C6.01835 12.0367 6.263 11.6942 6.45872 11.4985C4.69725 11.3028 2.83792 10.6177 2.83792 7.53517C2.83792 6.65443 3.1315 5.96942 3.66972 5.38226C3.62079 5.23547 3.32722 4.40367 3.76758 3.32722C3.76758 3.32722 4.4526 3.1315 5.96942 4.15902C6.6055 3.9633 7.29052 3.91437 7.97553 3.91437C8.66055 3.91437 9.34557 4.01223 9.98165 4.15902C11.4985 3.1315 12.1835 3.32722 12.1835 3.32722C12.6239 4.40367 12.3303 5.23547 12.2813 5.43119C12.7706 5.96942 13.1131 6.70336 13.1131 7.5841C13.1131 10.6667 11.2538 11.3028 9.49235 11.4985C9.78593 11.7431 10.0306 12.2324 10.0306 12.9664C10.0306 14.0428 10.0306 14.8746 10.0306 15.1682C10.0306 15.3639 10.1774 15.6086 10.5688 15.5596C13.7492 14.4832 16 11.4985 16 7.97553C15.9511 3.57186 12.3792 0 7.97553 0Z"
+                fill="#C5C5C5"
+              /></svg
+          ></a>
+          <a title="About"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M7.5 1a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zm0 12a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm1.55-8.42a1.84 1.84 0 0 0-.61-.42A2.25 2.25 0 0 0 7.53 4a2.16 2.16 0 0 0-.88.17c-.239.1-.45.254-.62.45a1.89 1.89 0 0 0-.38.62 3 3 0 0 0-.15.72h1.23a.84.84 0 0 1 .506-.741.72.72 0 0 1 .304-.049.86.86 0 0 1 .27 0 .64.64 0 0 1 .22.14.6.6 0 0 1 .16.22.73.73 0 0 1 .06.3c0 .173-.037.343-.11.5a2.4 2.4 0 0 1-.27.46l-.35.42c-.12.13-.24.27-.35.41a2.33 2.33 0 0 0-.27.45 1.18 1.18 0 0 0-.1.5v.66H8v-.49a.94.94 0 0 1 .11-.42 3.09 3.09 0 0 1 .28-.41l.36-.44a4.29 4.29 0 0 0 .36-.48 2.59 2.59 0 0 0 .28-.55 1.91 1.91 0 0 0 .11-.64 2.18 2.18 0 0 0-.1-.67 1.52 1.52 0 0 0-.35-.55zM6.8 9.83h1.17V11H6.8V9.83z"
+              />
+            </svg>
+          </a>
         </li>
       </ul>
     </div>
@@ -91,10 +121,23 @@
           <p>
             Select the configuration file to be used with the conversion target.
           </p>
-          <p v-if="isCompatibleConfigSelected()">          
-<svg style="vertical-align:middle" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M7.55976 1H8.43976L14.9798 13.26L14.5398 14H1.43976L0.999756 13.26L7.55976 1ZM7.99976 2.28L2.27976 13H13.6998L7.99976 2.28ZM8.62476 12V11H7.37476V12H8.62476ZM7.37476 10V6H8.62476V10H7.37476Z" fill="#FFCC00"/>
-</svg> You may be using incompatible target and configuration file
+          <p v-if="isCompatibleConfigSelected()">
+            <svg
+              style="vertical-align: middle"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M7.55976 1H8.43976L14.9798 13.26L14.5398 14H1.43976L0.999756 13.26L7.55976 1ZM7.99976 2.28L2.27976 13H13.6998L7.99976 2.28ZM8.62476 12V11H7.37476V12H8.62476ZM7.37476 10V6H8.62476V10H7.37476Z"
+                fill="#FFCC00"
+              />
+            </svg>
+            You may be using incompatible target and configuration file
           </p>
         </div>
         <select v-model="selectedSigmacConfig">
@@ -110,13 +153,43 @@
       <div class="settings-container">
         <span>Backend Options</span>
         <div class="settings-description">
-          <p>
-            Backend options allow you to modify the conversion output.
-          </p>
+          <p>Backend options allow you to modify the conversion output.</p>
         </div>
-        <input type="text" v-model="inputBackendOption"><button @click="addBackendOption">Add</button>
+        <div class="icon baseline">
+          <input type="text" v-model="inputBackendOption" /><svg
+            @click="addBackendOption"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+          >
+            <path d="M14 7v1H8v6H7V8H1V7h6V1h1v6h6z" />
+          </svg>
+        </div>
         <ul>
-          <li v-for="(backendOption, index) in sigmacBackendOptions" :key="backendOption">{{ backendOption }}<button @click="removeBackendOption(index)">Remove</button></li>
+          <div class="icon baseline">
+            <li
+              v-for="(backendOption, index) in sigmacBackendOptions"
+              :key="backendOption"
+            >
+              {{ backendOption }}
+              <svg
+                @click="removeBackendOption(index)"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8 8.707l3.646 3.647.708-.707L8.707 8l3.647-3.646-.707-.708L8 7.293 4.354 3.646l-.707.708L7.293 8l-3.646 3.646.707.708L8 8.707z"
+                />
+              </svg>
+            </li>
+          </div>
         </ul>
       </div>
     </div>
@@ -157,7 +230,7 @@ export default {
       loadingScreenLabel: "BrowserFS",
       inputEditor: null,
       outputEditor: null,
-      inputBackendOption: '',
+      inputBackendOption: "",
       selectedTab: "editor",
       stdOut: "",
       stdErr: "",
@@ -185,7 +258,7 @@ export default {
     },
     addBackendOption() {
       this.sigmacBackendOptions.push(this.inputBackendOption);
-      this.inputBackendOption = '';
+      this.inputBackendOption = "";
     },
     removeBackendOption(idx) {
       this.sigmacBackendOptions.splice(idx, 1);
@@ -331,7 +404,7 @@ export default {
         "/sigma/" + this.selectedSigmacConfig
       );
       //Set Python variable for backendOptions
-      window.pyodide.globals.set("backend_options", this.sigmacBackendOptions)
+      window.pyodide.globals.set("backend_options", this.sigmacBackendOptions);
       //This is ugly, but sort of necessary if I don't want to modify sigmac too much, pySigma should fix these issues hopefully
       window.pyodide.runPython(`
         from sigma.sigmac import main
@@ -352,7 +425,9 @@ export default {
         converted_rule = f.read()
         f.close()
         `);
-      (await this.outputEditor).setValue(window.pyodide.globals.get('converted_rule'));
+      (await this.outputEditor).setValue(
+        window.pyodide.globals.get("converted_rule")
+      );
       //(await this.outputEditor).setValue(this.stdOut);
     },
     copyRule: async function () {
@@ -514,7 +589,7 @@ select:hover {
   border-color: #1177bb;
 }
 
-input[type=text] {
+input[type="text"] {
   background-color: #2d2d2d;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: rgb(240, 240, 240);
@@ -525,7 +600,7 @@ input[type=text] {
   display: inline-block;
 }
 
-input[type=text]:focus {
+input[type="text"]:focus {
   outline-offset: -1px;
   outline-color: #1177bb;
   outline-style: solid;
@@ -555,7 +630,26 @@ input[type=text]:focus {
   display: inline-block;
 }
 
+.settings-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  min-width: 328px;
+}
+
+.icon.baseline svg {
+  top: 0.625em;
+  position: relative;
+  margin-left: 4px;
+  padding: 5px;
+}
+
+.icon.baseline svg:hover {
+  background-color: #2d2d2d;
+  border-radius: 50%;
+}
+
 .settings-container a:hover {
   background-color: #2d2d2d;
-} 
+}
 </style>
