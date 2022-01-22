@@ -25,7 +25,13 @@ export default {
   data() {
     return {
       selectedTab: 'terminal',
-      problemMessage: 'An unsupported feature is required for this Sigma rule (/sigma/editor_input): Not supported logsources!'
+    }
+  },
+  watch: {
+    stdErr() {
+      if(this.selectedTab !== '') {
+        this.selectedTab = 'problems'
+      }      
     }
   },
   methods: {
