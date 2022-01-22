@@ -42,6 +42,25 @@ import configLogpoint from "raw-loader!../assets/configs/logpoint-windows.yml"
 import configLogRhytmWinevent from "raw-loader!../assets/configs/logrhythm_winevent.yml"
 import configLogstashDefaultIndex from "raw-loader!../assets/configs/logstash-defaultindex.yml"
 import configLogstashLinux from "raw-loader!../assets/configs/logstash-linux.yml"
+import configLogstashWindows from "raw-loader!../assets/configs/logstash-windows.yml"
+import configLogstashZeekDefaultJson from "raw-loader!../assets/configs/logstash-zeek-default-json.yml"
+import configNetwitnessEpl from "raw-loader!../assets/configs/netwitness-epl.yml"
+import configNetwitness from "raw-loader!../assets/configs/netwitness.yml"
+import configPowershell from "raw-loader!../assets/configs/powershell.yml"
+import configQradar from "raw-loader!../assets/configs/qradar.yml"
+import configQualys from "raw-loader!../assets/configs/qualys.yml"
+import configSplunkWindowsIndex from "raw-loader!../assets/configs/splunk-windows-index.yml"
+import configSplunkWindows from "raw-loader!../assets/configs/splunk-windows.yml"
+import configSplunkZeek from "raw-loader!../assets/configs/splunk-zeek.yml"
+import configStixCustom from "raw-loader!../assets/configs/stix-custom.yml"
+import configStixShifter from "raw-loader!../assets/configs/stix-shifter.yml"
+import configStix20 from "raw-loader!../assets/configs/stix2.0.yml"
+import configSumologicCse from "raw-loader!../assets/configs/sumologic-cse.yml"
+import configSumologic from "raw-loader!../assets/configs/sumologic.yml"
+import configThor from "raw-loader!../assets/configs/thor.yml"
+import configWinlogbeatModulesEnabled from "raw-loader!../assets/configs/winlogbeat-modules-enabled.yml"
+import configWinlogbeat from "raw-loader!../assets/configs/winlogbeat.yml"
+import configZircolite from "raw-loader!../assets/configs/zircolite.yml"
 
 export const sigmacConfigs = [ // eslint-disable-line no-unused-vars
     { name: "AlaAzureActivitylog", filename: "ala-azure-activitylogs.yml", content: configAlaAzureActivitylog },
@@ -88,6 +107,25 @@ export const sigmacConfigs = [ // eslint-disable-line no-unused-vars
     { name: "LogRhytmWinevent", filename: "logrhythm_winevent.yml", content: configLogRhytmWinevent },
     { name: "LogstashDefaultIndex", filename: "logstash-defaultindex.yml", content: configLogstashDefaultIndex },
     { name: "LogstashLinux", filename: "logstash-linux.yml", content: configLogstashLinux },
+    { name: "LogstashWindows", filename: "logstash-windows.yml", content: configLogstashWindows },
+    { name: "LogstashZeekDefaultJson", filename: "logstash-zeek-default-json.yml", content: configLogstashZeekDefaultJson },
+    { name: "NetwitnessEpl", filename: "netwitness-epl.yml", content: configNetwitnessEpl },
+    { name: "Netwitness", filename: "netwitness.yml", content: configNetwitness },
+    { name: "Powershell", filename: "powershell.yml", content: configPowershell },
+    { name: "Qradar", filename: "qradar.yml", content: configQradar },
+    { name: "Qualys", filename: "qualys.yml", content: configQualys },
+    { name: "SplunkWindowsIndex", filename: "splunk-windows-index.yml", content: configSplunkWindowsIndex },
+    { name: "SplunkWindows", filename: "splunk-windows.yml", content: configSplunkWindows },
+    { name: "SplunkZeek", filename: "splunk-zeek.yml", content: configSplunkZeek },
+    { name: "StixCustom", filename: "stix-custom.yml", content: configStixCustom },
+    { name: "StixShifter", filename: "stix-shifter.yml", content: configStixShifter },
+    { name: "Stix20", filename: "stix2.0.yml", content: configStix20 },
+    { name: "SumologicCse", filename: "sumologic-cse.yml", content: configSumologicCse },
+    { name: "Sumologic", filename: "sumologic.yml", content: configSumologic },
+    { name: "Thor", filename: "thor.yml", content: configThor },
+    { name: "WinlogbeatModulesEnabled", filename: "winlogbeat-modules-enabled.yml", content: configWinlogbeatModulesEnabled },
+    { name: "Winlogbeat", filename: "winlogbeat.yml", content: configWinlogbeat },
+    { name: "Zircolite", filename: "zircolite.yml", content: configZircolite },
 ]
 
 export const sigmacTargets = [
@@ -105,42 +143,42 @@ export const sigmacTargets = [
     { targetValue: "ee-outliers", targetName: "EE-outliers", validConfigs: ["logstash-defaultindex.yml", "filebeat-defaultindex.yml", "logstash-linux.yml", "ecs-filebeat.yml", "logstash-windows.yml", "ecs-proxy.yml", "ecs-auditd.yml", "winlogbeat-old.yml", "ecs-auditbeat-modules-enabled.yml", "winlogbeat.yml", "winlogbeat-modules-enabled.yml", "ecs-zeek-corelight.yml", "ecs-zeek-elastic-beats-implementation.yml"] },
     { targetValue: "elastalert-dsl", targetName: "ElastAlert DSL query", validConfigs: ["logstash-defaultindex.yml", "filebeat-defaultindex.yml", "logstash-linux.yml", "ecs-filebeat.yml", "ecs-okta.yml", "ecs-dns.yml", "logstash-windows.yml", "ecs-suricata.yml", "ecs-cloudtrail.yml", "ecs-proxy.yml", "ecs-auditd.yml", "winlogbeat-old.yml", "helk.yml", "logstash-zeek-default-json.yml", "ecs-auditbeat-modules-enabled.yml", "winlogbeat.yml", "winlogbeat-modules-enabled.yml", "ecs-zeek-corelight.yml", "ecs-zeek-elastic-beats-implementation.yml"] },
     { targetValue: "elastalert", targetName: "ElastAlert QS query", validConfigs: ["logstash-defaultindex.yml", "filebeat-defaultindex.yml", "logstash-linux.yml", "ecs-filebeat.yml", "ecs-okta.yml", "ecs-dns.yml", "logstash-windows.yml", "ecs-suricata.yml", "ecs-cloudtrail.yml", "ecs-proxy.yml", "ecs-auditd.yml", "winlogbeat-old.yml", "helk.yml", "logstash-zeek-default-json.yml", "ecs-auditbeat-modules-enabled.yml", "winlogbeat.yml", "winlogbeat-modules-enabled.yml", "ecs-zeek-corelight.yml", "ecs-zeek-elastic-beats-implementation.yml"] },
-    { targetValue: "es-dsl", targetName: "Elasticsearch DSL query", validConfigs: [""] },
-    { targetValue: "es-eql", targetName: "Elasticsearch EQL query", validConfigs: [""] },
-    { targetValue: "es-qs", targetName: "Elasticsearch query string", validConfigs: [""] },
-    { targetValue: "es-rule-eql", targetName: "Elastic SIEM EQL query", validConfigs: [""] },
-    { targetValue: "es-rule", targetName: "Elastic SIEM Lucene query", validConfigs: [""] },
-    { targetValue: "xpack-watcher", targetName: "Elastic X-Pack Watcher JSON", validConfigs: [""] },
-    { targetValue: "fireeye-helix", targetName: "FireEye Helix Query Language", validConfigs: [""] },
-    { targetValue: "chronicle", targetName: "Google Chronicle YARA-L", validConfigs: [""] },
-    { targetValue: "graylog", targetName: "Graylog query string", validConfigs: [""] },
-    { targetValue: "grep", targetName: "Grep", validConfigs: [""] },
-    { targetValue: "hawk", targetName: "HAWK search", validConfigs: [""] },
-    { targetValue: "humio", targetName: "Humio query", validConfigs: [""] },
-    { targetValue: "kibana", targetName: "Kibana Saved Search JSON", validConfigs: [""] },
-    { targetValue: "kibana-ndjson", targetName: "Kibana Saved Search NDJSON", validConfigs: [""] },
-    { targetValue: "lacework", targetName: "Lacework Policy Platform", validConfigs: [""] },
-    { targetValue: "limacharlie", targetName: "LimaCharlie D&R rule", validConfigs: [""] },
-    { targetValue: "logiq", targetName: "LOGIQ event rule API payload", validConfigs: [""] },
-    { targetValue: "logpoint", targetName: "LogPoint query", validConfigs: [""] },
-    { targetValue: "es-qs-lr", targetName: "LogRhythm Lucene query string", validConfigs: [""] },
-    { targetValue: "mdatp", targetName: "Microsoft Defender ATP Hunting Query", validConfigs: [""] },
-    { targetValue: "netwitness", targetName: "NetWitness saved search", validConfigs: [""] },
-    { targetValue: "opensearch-monitor", targetName: "OpenSearch monitor (Query String)", validConfigs: [""] },
-    { targetValue: "powershell", targetName: "PowerShell event log cmdlet", validConfigs: [""] },
-    { targetValue: "qualys", targetName: "Qualys saved search", validConfigs: [""] },
-    { targetValue: "qradar", targetName: "Qradar saved search", validConfigs: [""] },
-    { targetValue: "netwitness-epl", targetName: "RSA NetWitness EPL", validConfigs: [""] },
-    { targetValue: "splunkxml", targetName: "Splunk Dashboard Panels XML", validConfigs: [""] },
-    { targetValue: "splunk", targetName: "Splunk Search Processing Language (SPL)", validConfigs: [""] },
-    { targetValue: "splunkdm", targetName: "Splunk syntax leveraging Datamodel acceleration", validConfigs: [""] },
-    { targetValue: "sql", targetName: "SQL query", validConfigs: [""] },
-    { targetValue: "sqlite", targetName: "SQL query for SQLite", validConfigs: [""] },
-    { targetValue: "stix", targetName: "STIX pattern", validConfigs: [""] },
-    { targetValue: "sumologic-cse-rule", targetName: "SumoLogic CSE query rule", validConfigs: [""] },
-    { targetValue: "sumologic-cse", targetName: "SumoLogic CSE query", validConfigs: [""] },
-    { targetValue: "sumologic", targetName: "SumoLogic query", validConfigs: [""] },
-    { targetValue: "sysmon", targetName: "Sysmon XML configuration", validConfigs: [""] },
-    { targetValue: "uberagent", targetName: "uberAgent ESA's process tagging rule", validConfigs: [""] },    
-    { targetValue: "fieldlist", targetName: "List all fieldnames from given Sigma rule", validConfigs: [""] },    
+    { targetValue: "es-dsl", targetName: "Elasticsearch DSL query", validConfigs: ["logstash-defaultindex.yml", "filebeat-defaultindex.yml", "logstash-linux.yml", "ecs-filebeat.yml", "ecs-okta.yml", "ecs-dns.yml", "logstash-windows.yml", "ecs-suricata.yml", "ecs-cloudtrail.yml", "ecs-proxy.yml", "ecs-auditd.yml", "winlogbeat-old.yml", "helk.yml", "logstash-zeek-default-json.yml", "ecs-auditbeat-modules-enabled.yml", "winlogbeat.yml", "winlogbeat-modules-enabled.yml", "ecs-zeek-corelight.yml", "ecs-zeek-elastic-beats-implementation.yml"] },
+    { targetValue: "es-eql", targetName: "Elasticsearch EQL query", validConfigs: ["ecs-filebeat.yml", "ecs-auditd.yml", "ecs-auditbeat-modules-enabled.yml", "winlogbeat-modules-enabled.yml"] },
+    { targetValue: "es-qs", targetName: "Elasticsearch query string", validConfigs: ["logstash-defaultindex.yml", "filebeat-defaultindex.yml", "logstash-linux.yml", "ecs-filebeat.yml", "ecs-okta.yml", "ecs-dns.yml", "logstash-windows.yml", "ecs-suricata.yml", "ecs-cloudtrail.yml", "ecs-proxy.yml", "ecs-auditd.yml", "winlogbeat-old.yml", "helk.yml", "logstash-zeek-default-json.yml", "ecs-auditbeat-modules-enabled.yml", "winlogbeat.yml", "winlogbeat-modules-enabled.yml", "ecs-zeek-corelight.yml", "ecs-zeek-elastic-beats-implementation.yml"] },
+    { targetValue: "es-rule-eql", targetName: "Elastic SIEM EQL query", validConfigs: ["ecs-filebeat.yml", "ecs-auditd.yml", "ecs-auditbeat-modules-enabled.yml", "winlogbeat-modules-enabled.yml"] },
+    { targetValue: "es-rule", targetName: "Elastic SIEM Lucene query", validConfigs: ["logstash-defaultindex.yml", "filebeat-defaultindex.yml", "logstash-linux.yml", "ecs-filebeat.yml", "ecs-okta.yml", "ecs-dns.yml", "logstash-windows.yml", "ecs-suricata.yml", "ecs-cloudtrail.yml", "ecs-proxy.yml", "ecs-auditd.yml", "winlogbeat-old.yml", "helk.yml", "logstash-zeek-default-json.yml", "ecs-auditbeat-modules-enabled.yml", "winlogbeat.yml", "winlogbeat-modules-enabled.yml", "ecs-zeek-corelight.yml", "ecs-zeek-elastic-beats-implementation.yml"] },
+    { targetValue: "xpack-watcher", targetName: "Elastic X-Pack Watcher JSON", validConfigs: ["logstash-defaultindex.yml", "filebeat-defaultindex.yml", "logstash-linux.yml", "ecs-filebeat.yml", "ecs-okta.yml", "ecs-dns.yml", "logstash-windows.yml", "ecs-suricata.yml", "ecs-cloudtrail.yml", "ecs-proxy.yml", "ecs-auditd.yml", "winlogbeat-old.yml", "helk.yml", "logstash-zeek-default-json.yml", "ecs-auditbeat-modules-enabled.yml", "winlogbeat.yml", "winlogbeat-modules-enabled.yml", "ecs-zeek-corelight.yml", "ecs-zeek-elastic-beats-implementation.yml"] },
+    { targetValue: "fireeye-helix", targetName: "FireEye Helix Query Language", validConfigs: ["fireeye-helix.yml"] },
+    { targetValue: "chronicle", targetName: "Google Chronicle YARA-L", validConfigs: ["chronicle.yml"] },
+    { targetValue: "graylog", targetName: "Graylog query string", validConfigs: [] },
+    { targetValue: "grep", targetName: "Grep", validConfigs: [] },
+    { targetValue: "hawk", targetName: "HAWK search", validConfigs: ["hawk.yml"] },
+    { targetValue: "humio", targetName: "Humio query", validConfigs: ["humio.yml"] },
+    { targetValue: "kibana", targetName: "Kibana Saved Search JSON", validConfigs: ["logstash-defaultindex.yml", "filebeat-defaultindex.yml", "logstash-linux.yml", "ecs-filebeat.yml", "ecs-okta.yml", "ecs-dns.yml", "logstash-windows.yml", "ecs-suricata.yml", "ecs-cloudtrail.yml", "ecs-proxy.yml", "ecs-auditd.yml", "winlogbeat-old.yml", "helk.yml", "logstash-zeek-default-json.yml", "ecs-auditbeat-modules-enabled.yml", "winlogbeat.yml", "winlogbeat-modules-enabled.yml", "ecs-zeek-corelight.yml", "ecs-zeek-elastic-beats-implementation.yml"] },
+    { targetValue: "kibana-ndjson", targetName: "Kibana Saved Search NDJSON", validConfigs: ["logstash-defaultindex.yml", "filebeat-defaultindex.yml", "logstash-linux.yml", "ecs-filebeat.yml", "ecs-okta.yml", "ecs-dns.yml", "logstash-windows.yml", "ecs-suricata.yml", "ecs-cloudtrail.yml", "ecs-proxy.yml", "ecs-auditd.yml", "winlogbeat-old.yml", "helk.yml", "logstash-zeek-default-json.yml", "ecs-auditbeat-modules-enabled.yml", "winlogbeat.yml", "winlogbeat-modules-enabled.yml", "ecs-zeek-corelight.yml", "ecs-zeek-elastic-beats-implementation.yml"] },
+    { targetValue: "lacework", targetName: "Lacework Policy Platform", validConfigs: [] },
+    { targetValue: "limacharlie", targetName: "LimaCharlie D&R rule", validConfigs: ["limacharlie.yml"] },
+    { targetValue: "logiq", targetName: "LOGIQ event rule API payload", validConfigs: [] },
+    { targetValue: "logpoint", targetName: "LogPoint query", validConfigs: ["logpoint-windows.yml"] },
+    { targetValue: "es-qs-lr", targetName: "LogRhythm Lucene query string", validConfigs: ["logrhythm_winevent.yml"] },
+    { targetValue: "mdatp", targetName: "Microsoft Defender ATP Hunting Query", validConfigs: [] },
+    { targetValue: "netwitness", targetName: "NetWitness saved search", validConfigs: ["netwitness.yml"] },
+    { targetValue: "opensearch-monitor", targetName: "OpenSearch monitor (Query String)", validConfigs: ["winlogbeat.yml"] },
+    { targetValue: "powershell", targetName: "PowerShell event log cmdlet", validConfigs: ["powershell.yml", "powershell-windows-all.yml"] },
+    { targetValue: "qualys", targetName: "Qualys saved search", validConfigs: ["qualys.yml"] },
+    { targetValue: "qradar", targetName: "Qradar saved search", validConfigs: ["qradar.yml"] },
+    { targetValue: "netwitness-epl", targetName: "RSA NetWitness EPL", validConfigs: ["netwitness-epl.yml"] },
+    { targetValue: "splunkxml", targetName: "Splunk Dashboard Panels XML", validConfigs: ["splunk-windows-index.yml", "splunk-windows.yml", "splunk-zeek.yml"] },
+    { targetValue: "splunk", targetName: "Splunk Search Processing Language (SPL)", validConfigs: ["splunk-windows-index.yml", "splunk-windows.yml", "splunk-zeek.yml"] },
+    { targetValue: "splunkdm", targetName: "Splunk syntax leveraging Datamodel acceleration", validConfigs: ["splunk-windows-index.yml", "splunk-windows.yml"] },
+    { targetValue: "sql", targetName: "SQL query", validConfigs: [] },
+    { targetValue: "sqlite", targetName: "SQL query for SQLite", validConfigs: ["zircolite.yml"] },
+    { targetValue: "stix", targetName: "STIX pattern", validConfigs: ["stix-shifter.yml", "stix-custom.yml", "stix2.0.yml"] },
+    { targetValue: "sumologic-cse-rule", targetName: "SumoLogic CSE query rule", validConfigs: ["sumologic-cse.yml"] },
+    { targetValue: "sumologic-cse", targetName: "SumoLogic CSE query", validConfigs: ["sumologic-cse.yml"] },
+    { targetValue: "sumologic", targetName: "SumoLogic query", validConfigs: ["sumologic.yml"] },
+    { targetValue: "sysmon", targetName: "Sysmon XML configuration", validConfigs: [] },
+    { targetValue: "uberagent", targetName: "uberAgent ESA's process tagging rule", validConfigs: [] },    
+    { targetValue: "fieldlist", targetName: "List all fieldnames from given Sigma rule", validConfigs: [] },    
 ]
