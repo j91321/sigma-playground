@@ -9,6 +9,7 @@
   </div>
   <div v-else>
     <div class="action-panel">
+      <div id="snackbar" :class="showToast">Copied to clipboard</div>
       <ul>
         <li
           :class="isTabSelected('editor') ? 'selectedItem' : 'unselectedItem'"
@@ -73,21 +74,6 @@
                 fill="#C5C5C5"
               /></svg
           ></a>
-          <a title="About"
-            ><svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M7.5 1a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zm0 12a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm1.55-8.42a1.84 1.84 0 0 0-.61-.42A2.25 2.25 0 0 0 7.53 4a2.16 2.16 0 0 0-.88.17c-.239.1-.45.254-.62.45a1.89 1.89 0 0 0-.38.62 3 3 0 0 0-.15.72h1.23a.84.84 0 0 1 .506-.741.72.72 0 0 1 .304-.049.86.86 0 0 1 .27 0 .64.64 0 0 1 .22.14.6.6 0 0 1 .16.22.73.73 0 0 1 .06.3c0 .173-.037.343-.11.5a2.4 2.4 0 0 1-.27.46l-.35.42c-.12.13-.24.27-.35.41a2.33 2.33 0 0 0-.27.45 1.18 1.18 0 0 0-.1.5v.66H8v-.49a.94.94 0 0 1 .11-.42 3.09 3.09 0 0 1 .28-.41l.36-.44a4.29 4.29 0 0 0 .36-.48 2.59 2.59 0 0 0 .28-.55 1.91 1.91 0 0 0 .11-.64 2.18 2.18 0 0 0-.1-.67 1.52 1.52 0 0 0-.35-.55zM6.8 9.83h1.17V11H6.8V9.83z"
-              />
-            </svg>
-          </a>
         </li>
       </ul>
     </div>
@@ -234,6 +220,7 @@ export default {
       selectedTab: "editor",
       stdOut: "",
       stdErr: "",
+      showToast: "",
     };
   },
   methods: {
@@ -257,8 +244,10 @@ export default {
       return true;
     },
     addBackendOption() {
-      this.sigmacBackendOptions.push(this.inputBackendOption);
-      this.inputBackendOption = "";
+      if(this.inputBackendOption !== "") {
+        this.sigmacBackendOptions.push(this.inputBackendOption);
+        this.inputBackendOption = "";
+      }
     },
     removeBackendOption(idx) {
       this.sigmacBackendOptions.splice(idx, 1);
@@ -380,9 +369,18 @@ export default {
           automaticLayout: true,
         });
       });
+      //Check if local storage contains previous work, and load it
+      try {
+        var fs = window.BrowserFS.BFSRequire("fs");
+        const storedEditorContent = fs.readFileSync("/editor_input");
+        (await this.inputEditor).setValue(storedEditorContent.toString());
+      } catch (e) {
+        console.log("Previous work in editor_input was not found.")
+      }
       this.initializationMonacoComplete = true;
     },
     translateRule: async function () {
+      this.stdErr = ""
       const inputRule = (await this.inputEditor).getValue();
       var fs = window.BrowserFS.BFSRequire("fs");
       //Find config object based on selected config
@@ -408,7 +406,8 @@ export default {
       //This is ugly, but sort of necessary if I don't want to modify sigmac too much, pySigma should fix these issues hopefully
       window.pyodide.runPython(`
         from sigma.sigmac import main
-        import js
+        # Use import js if you need to debug the sigmac input arguments
+        #import js
         input_args = ["--target"]
         input_args.append(sigmac_target)
         input_args.append("--config")
@@ -419,7 +418,7 @@ export default {
             input_args.append("--backend-option")
             input_args.append(backend_option)
         input_args.append("/sigma/editor_input")
-        js.console.log(str(input_args))
+        #js.console.log(str(input_args))
         main(input_args)
         f = open('/sigma/output')
         converted_rule = f.read()
@@ -431,6 +430,8 @@ export default {
       //(await this.outputEditor).setValue(this.stdOut);
     },
     copyRule: async function () {
+      this.showToast = "show"
+      setTimeout(() => {this.showToast = ""}, 3000);
       navigator.clipboard.writeText((await this.outputEditor).getValue());
     },
   },
@@ -651,5 +652,50 @@ input[type="text"]:focus {
 
 .settings-container a:hover {
   background-color: #2d2d2d;
+}
+
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 3; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  top: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {top: 30px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {top: 30px; opacity: 1;}
+  to {top: 0; opacity: 0;}
 }
 </style>
