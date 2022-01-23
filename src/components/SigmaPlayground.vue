@@ -289,7 +289,7 @@ export default {
         await window.pyodide.runPythonAsync("import micropip");
         this.loadingScreenLabel = "SigmaTools";
         await window.pyodide.runPythonAsync(
-          "await micropip.install('/sigmatools-0.20-py3-none-any.whl')"
+          "await micropip.install('/sigma-playground/sigmatools-0.20-py3-none-any.whl')"
         );
         console.log("Loaded sigmatools");
         //Browserfs test
