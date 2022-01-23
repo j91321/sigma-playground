@@ -522,12 +522,14 @@ export default {
 
 .playground .left {
   width: 50%;
-  height: 600px;
+  min-height: 500px;
+  height: calc(100vh - 165px);
 }
 
 .playground .right {
   width: 50%;
-  height: 600px;
+  min-height: 500px;
+  height: calc(100vh - 165px);
 }
 
 @media screen and (max-width: 890px) {
@@ -538,12 +540,12 @@ export default {
   }
 
   .playground .left {
-    height: 600px;
+    height: 75vh;
     width: 100%;
   }
 
   .playground .right {
-    height: 600px;
+    height: 75vh;
     width: 100%;
   }
 }
@@ -609,7 +611,7 @@ input[type="text"]:focus {
 
 .settings {
   background-color: #1e1e1e;
-  height: 635px;
+  height: calc(100vh - 130px);
   margin-top: -18px;
 }
 
