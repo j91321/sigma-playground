@@ -404,30 +404,35 @@ export default {
       //Set Python variable for backendOptions
       window.pyodide.globals.set("backend_options", this.sigmacBackendOptions);
       //This is ugly, but sort of necessary if I don't want to modify sigmac too much, pySigma should fix these issues hopefully
-      window.pyodide.runPython(`
-        from sigma.sigmac import main
-        # Use import js if you need to debug the sigmac input arguments
-        #import js
-        input_args = ["--target"]
-        input_args.append(sigmac_target)
-        input_args.append("--config")
-        input_args.append(sigmac_config)
-        input_args.append("--output")
-        input_args.append("/sigma/output")
-        for backend_option in backend_options:
-            input_args.append("--backend-option")
-            input_args.append(backend_option)
-        input_args.append("/sigma/editor_input")
-        #js.console.log(str(input_args))
-        main(input_args)
-        f = open('/sigma/output')
-        converted_rule = f.read()
-        f.close()
-        `);
-      (await this.outputEditor).setValue(
-        window.pyodide.globals.get("converted_rule")
-      );
-      //(await this.outputEditor).setValue(this.stdOut);
+      try {
+        window.pyodide.runPython(`
+          from sigma.sigmac import main
+          # Use import js if you need to debug the sigmac input arguments
+          #import js
+          input_args = ["--target"]
+          input_args.append(sigmac_target)
+          input_args.append("--config")
+          input_args.append(sigmac_config)
+          input_args.append("--output")
+          input_args.append("/sigma/output")
+          for backend_option in backend_options:
+              input_args.append("--backend-option")
+              input_args.append(backend_option)
+          input_args.append("/sigma/editor_input")
+          #js.console.log(str(input_args))
+          main(input_args)
+          f = open('/sigma/output')
+          converted_rule = f.read()
+          f.close()
+          `);
+        (await this.outputEditor).setValue(
+          window.pyodide.globals.get("converted_rule")
+        );
+        //(await this.outputEditor).setValue(this.stdOut);
+      } catch (e) {
+        this.stdErr = e
+      }
+
     },
     copyRule: async function () {
       this.showToast = "show"
