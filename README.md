@@ -1,5 +1,9 @@
 # sigma-playground
 
+[![GitHub license](https://img.shields.io/github/license/j91321/sigma-playground?style=flat-square)](https://github.com/j91321/sigma-playground/blob/main/LICENSE)
+[![GitHub last commit](https://img.shields.io/github/last-commit/j91321/sigma-playground.svg?style=flat-square)](https://github.com/j91321/sigma-playground/commit/main)
+[![Twitter](https://img.shields.io/twitter/follow/j91321.svg?style=social&label=Follow)](https://twitter.com/j91321)
+
 Small interactive playground to experiment with the [Sigma](https://github.com/SigmaHQ/sigma) generic rule format and sigmatools converter without the need to install anything.
 
 ![Sigma playground](img/playground.png)
@@ -14,7 +18,7 @@ The playground has three components:
 
 These three components are ducktaped together in Vue 3 app to create a static site that operates entirely in your browser.
 
-A slightly modified version of sigmatools is installed into Pyodide to get you started on experimenting with Sigma.
+A slightly [modified](https://github.com/j91321/sigma/tree/pyodide/tools) version of sigmatools is installed into Pyodide to get you started on experimenting with Sigma.
 
 None of your work leaves your browser, everything is stored in browser LocalStorage. Internet connection however is required because some components are loaded from CDN.
 
@@ -40,7 +44,7 @@ The bottom of the editor will show you the sigma command you are executing and a
 
 ### Monaco Editor tips
 
-You can press F1 to open editor menu. There are a few useful commands added:
+You can press F1 to open editor menu (or right-click). There are a few useful commands added:
 
 - Load Sigma Rule Template - replaces input editor with a Sigma rule template
 - Generate GUID also (Ctrl+Alt+g) - generates GUID on cursor 
