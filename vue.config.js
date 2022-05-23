@@ -1,3 +1,5 @@
 module.exports = {
-  publicPath: '/sigma-playground/'
+  publicPath: process.env.NODE_ENV === 'development'
+  ? '/'
+  : '/sigma-playground/'
 }

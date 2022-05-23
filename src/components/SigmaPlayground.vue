@@ -198,6 +198,7 @@ import loader from "@monaco-editor/loader";
 import ruleTemplate from "raw-loader!../assets/rule_template.yaml";
 import { sigmacConfigs } from "./sigmacConfigs.js";
 import { sigmacTargets } from "./sigmacConfigs.js";
+import { publicPath } from '../../vue.config'
 
 export default {
   components: {
@@ -287,9 +288,13 @@ export default {
         this.loadingScreenLabel = "Micropip";
         await window.pyodide.loadPackage("micropip");
         await window.pyodide.runPythonAsync("import micropip");
+        await window.pyodide.runPythonAsync("import js");
         this.loadingScreenLabel = "SigmaTools";
+        let server_publicPath = {publicPath: publicPath}
+        await window.pyodide.registerJsModule("server_publicPath", server_publicPath)
+        await window.pyodide.runPythonAsync("from server_publicPath import publicPath")
         await window.pyodide.runPythonAsync(
-          "await micropip.install('/sigma-playground/sigmatools-0.20-py3-none-any.whl')"
+          "await micropip.install(publicPath+'sigmatools-0.20-py3-none-any.whl')"
         );
         console.log("Loaded sigmatools");
         //Browserfs test
