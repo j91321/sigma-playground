@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/github/license/j91321/sigma-playground?style=flat-square)](https://github.com/j91321/sigma-playground/blob/main/LICENSE)
 [![GitHub last commit](https://img.shields.io/github/last-commit/j91321/sigma-playground.svg?style=flat-square)](https://github.com/j91321/sigma-playground/commit/main)
-[![Twitter](https://img.shields.io/twitter/follow/j91321.svg?style=social&label=Follow)](https://twitter.com/j91321)
+![Mastodon Follow](https://img.shields.io/mastodon/follow/109290534387866580?domain=https%3A%2F%2Finfosec.exchange&style=social)
 
 Small interactive playground to experiment with the [Sigma](https://github.com/SigmaHQ/sigma) generic rule format and sigmatools converter without the need to install anything.
 
